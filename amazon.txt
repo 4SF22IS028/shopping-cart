@@ -32,8 +32,8 @@ git add .
 git commit -m "message"
 git push
 git log  —oneline 
-git tag  v1.0 (commit id) 
-git tag
+git tag -a v1.0 -m "tag" 
+git show v1.0
 git push origin v1.0
 
 EXPERIMENT 5
@@ -47,3 +47,170 @@ git log --oneline
 git show (commit id)
 git log --author="      " --after="   "    --before="   "
 git log -n 5
+
+----1st---- 
+ 
+This command is used to initialize a new Git repository in the current directory. It 
+sets up the necessary data structures and files that Git needs to start tracking changes 
+to your project. 
+git clone ‘remote repository link’ 
+ 
+ 
+This command is used to create a copy of an existing Git repository from a remote 
+location (in this case, from the specified URL) to your local machine. It not only copies 
+the files but also sets up a connection to the original repository so you can pull in updates 
+later. 
+ 
+git add . 
+ 
+This command is used to stage all changes in the current directory for the next commit. 
+Staging is the process of preparing files to be included in the next commit. The dot (.) 
+indicates that all changes, including new files, modified files, and deleted files, should be 
+
+ 
+staged. 
+git commit -m "<message>" 
+ 
+ 
+This command is used to record the changes that have been staged (using git add) in the 
+repository. The -m flag allows you to include a short message that describes the changes 
+made in this commit. It's good practice to write clear and concise commit messages that 
+explain the purpose of the changes. 
+git push 
+ 
+ 
+This command is used to upload local repository content to a remote repository. In the 
+context of GitHub, it typically sends committed changes from your local repository to 
+the remote repository on GitHub. This allows others to see the changes you've made 
+and collaborate with you. Depending on your Git configuration, you may need to 
+specify the remote repository and branch name, but if you've cloned a repository, Git 
+usually sets up the default remote and branch for you.
+
+----2nd----
+
+ git branch -b feature-branch 
+This command creates a new branch named "feature-branch" but doesn't switch to it. 
+ 
+ 
+git checkout master/main 
+This command switches to the "master" branch. 
+ 
+ 
+git merge feature-branch 
+This command merges changes from "feature-branch" into the "master" branch git 
+stash: 
+Stash your changes 
+ 
+ 
+git checkout feature-branch 
+ 
+ 
+Switch branches (example: from "master" to "feature-branch") 
+ 
+ 
+git stash apply 
+Apply the stashed changes
+
+----3rd----
+
+a) Clone a remote Git repository to your local machine: 
+git clone <repository_url> 
+This command clones a remote Git repository onto your local machine, creating 
+a new directory with the same name as the repository. 
+b) Fetch the latest changes from a remote repository and rebase your local branch 
+onto the updated remote branch: 
+git checkout -b feature-branch 
+git fetch origin 
+git rebase origin/<branch_name> 
+The first command (git fetch origin) fetches the latest changes from the remote 
+repository named "origin" without merging them into your local branches. The 
+second command (git rebase origin/<branch_name>) rebases your current local 
+ 
+branch onto the updated remote branch, integrating the latest changes from the 
+remote repository while maintaining the commit history. 
+ git checkout master 
+git merge --no-ff feature-branch -m "Custom commit message" 
+The first command (git checkout master) switches to the "master" branch. The 
+second command (git merge --no-ff feature-branch -m "Custom commit 
+message") merges the changes from the "feature-branch" into the "master" branch, 
+creating a merge commit with the provided custom commit message. The --no-ff 
+option ensures that a merge commit is always created, even if the merge could be 
+performed with a fast-forward.
+
+
+----4th---
+
+git log 
+to view the commit history and find the commit ID you want to tag. Each commit is 
+identified by a unique hash. git 
+tag v1.0 <commit_id> 
+git tag followed by the tag name (e.g., "v1.0") and the commit ID to create a lightweight 
+tag. Lightweight tags are simply pointers to specific commits and do not contain 
+additional metadata like annotated tags. 
+git show v1.0 
+Use git show followed by the tag name to verify that the tag was created correctly and 
+is pointing to the desired commit. This command will display the details of the tag, 
+including the commit it points to. 
+git push origin v1.0 
+If you want to share the tag with others, you can push it to a remote repository using git 
+CS42297CA: GIT HUB:AI POWERED DEVELOPER PLATFORM 
+ 
+Department of Information Science & Engineering, SCEM, Mangaluru.    Page 10 
+ 
+push. This step is optional and depends on your workflow and the need to share the tag 
+with others. 
+
+----5th--
+
+git checkout -b source-branch: 
+Creates and switches to a new branch named "source-branch." 
+Makes some change filename: Edits a file in the working 
+directory. 
+git add . : 
+Stages all changes in the working directory for the next commit. 
+git push: 
+Pushes committed changes to the remote repository. 
+git commit -m "commit123": 
+Commits the staged changes with the given commit message. 
+git status: 
+Displays the status of changes as untracked, modified, or staged. 
+git log --oneline: 
+Shows a concise log of commits with their hash and short descriptions. 
+Copy hash of the commit: 
+Manually record the commit hash for reference. 
+git checkout -m main: 
+CS42297CA: GIT HUB:AI POWERED DEVELOPER PLATFORM 
+ 
+Department of Information Science & Engineering, SCEM, Mangaluru.    Page 12 
+ 
+Switches to the "main" branch, assuming it already exists. 
+git cherry-pick cb0249: 
+Applies the changes from a specific commit (cb0249) to the current branch. 
+git cherry-pick 5ei3ei...2b: 
+Picks a range of commits and applies them to the current branch. 
+git cherry-pick --continue: 
+Continues the cherry-pick process after resolving conflicts. 
+git log --oneline: 
+Displays an updated log after cherry-picking, showing the new commit(s). 
+
+----6th----
+
+git show <commit_id> 
+This command displays the details of a specific commit, including the commit message, 
+author, date, and the changes made in the commit. It's useful for reviewing the details 
+of a particular commit in your Git history. 
+git log --author=JohnDoe --after=2023-01-01 --before=2023-12-31 
+This command lists all commits made by the author "JohnDoe" between the dates 
+"2023-01-01" and "2023-12-31". It's helpful for filtering the commit history based on 
+authorship and date ranges. 
+CS42297CA: GIT HUB:AI POWERED DEVELOPER PLATFORM 
+ 
+Department of Information Science & Engineering, SCEM, Mangaluru.    Page 15 
+ 
+git log -n 5 
+This command displays the last five commits in the repository's history. It's useful for 
+quickly viewing recent changes and understanding the recent development activity in 
+the repository. git revert abc123 
+This command creates a new commit that undoes the changes introduced by the commit 
+with the ID "abc123". It's a safe way to undo changes without altering the commit 
+history, as it creates a new commit that reflects the changes being reverted. 
