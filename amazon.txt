@@ -1,7 +1,6 @@
 EXPERIMENT 1
 git clone repolink 
-cd reponame 
-code . 
+cd reponame  
 gitadd .
 git commit -m "message" 
 git push
@@ -11,10 +10,9 @@ git branch feature-branch
 git checkout feature-branch
 git add .
 git commit -m "message"
-git push origin feature-branch:main
-
-git add .
-git commit -m "message"
+git checkout main
+git merge feature-branch
+git add 
 git stash
 git checkout feature-branch
 git stash apply
@@ -24,7 +22,7 @@ git clone repolink
 git branch -v
 git checkout -b feature-branch
 git branch -v
-git rebase origin 
+git fetch origin 
 git add .
 git commit -m "message"
 git rebase origin
@@ -41,12 +39,11 @@ git push origin v1.0
 EXPERIMENT 5
 git log --oneline 
 git status 
-git checkout feature-branch 
+git checkout main 
 git cherry-pick id
 
 EXPERIMENT 6
 git log --oneline 
 git show (commit id)
-//open new terminal //
-git log --author=" " --after="(//yesterday date//) "    --before="(//tmr date//)"
+git log --author="      " --after="   "    --before="   "
 git log -n 5
