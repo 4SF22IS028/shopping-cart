@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import numpy as np
+X=['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec']
+Y1=[800,700,400,300,100,30,10,100,200,400,600,900]
+Y2=[190,180,170,180,190,200,180,190,200,170,185,200]
+plt.figure()
+plt.plot(X,Y1,marker='*',color='pink',label='Jackets')
+plt.plot(X,Y2,marker='*',color='green',label='Socks')
+plt.title("Revenue - Jackets and Socks")
+plt.xlabel("Months")
+plt.ylabel("Revenue")
+plt.xticks(rotation=90)
+plt.yticks(np.arange(100,900,100),label=Y1)
+plt.legend(loc='upper center')
+plt.grid(True)
