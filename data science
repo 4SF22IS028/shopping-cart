@@ -105,6 +105,6 @@ import seaborn as sns
 import pandas as pd
 ax=plt.axes()
 df_cm=cm
-sns.heatmap(df_cm,annot=true,annot_Kws={"size":30},fmt='d',cmap="Blues",ax=ax)
+sns.heatmap(df_cm,annot=True,annot_kws={"size":30},fmt='d',cmap="Blues",ax=ax)
 ax.set_title('Confusion Matrix')
 plt.show()
